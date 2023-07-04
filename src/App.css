@@ -1,3 +1,8 @@
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
 .App {
   height: 100vh;
   width: 100vw;
@@ -12,7 +17,20 @@
 }
 
 .Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
   height: 70vh;
+  line-height: 1.3em;
+}
+
+.Card img {
+  height: 20%;
+}
+
+.Card ul {
+  list-style: none;
 }
 
 .Footer {
