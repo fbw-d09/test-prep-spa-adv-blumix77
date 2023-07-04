@@ -1,10 +1,14 @@
 import React from 'react';
+
+import { useContext } from 'react';
+
 import ThemeContext from '../ThemeContext';
 
-const Card = ({country}) => 
-{
+const Card = ({country}) => {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
-    <div className="Card">
+    <div className="Card" style={{backgroundColor: theme === 'light' ? "white" : "black", color: theme === 'light' ? 'black' : 'white'}}>
       <h2>{country.name}</h2>
       <img src={country.img} alt="Flag"/>
 
