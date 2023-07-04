@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const Card = () => {
+const Card = ({country}) => 
+{
+  console.log(props.country);
+  const { country } = props;
   return (
     <div className='Card'>
-        Card
-      {/* Display Country Card with data from App here */}
+      <h2>{country.name}</h2>
     </div>
   )
 }

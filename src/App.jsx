@@ -4,9 +4,7 @@ import Footer from './components/Footer';
 import './App.css'
 
 function App() {
-
-
-  const country = {
+const country = {
     name: "South Africa",
     img: "https://de.wikipedia.org/wiki/Datei:Flag_of_South_Africa.svg",
     capital: "Pretoria",
@@ -32,14 +30,11 @@ function App() {
                             "Eswatini"
                           ],
   };
-
-
-
   return (
     <>
       <div className='App'>
           <Header/>
-          <Card/>
+          <Card country={country}/>
           <Footer/>
       </div>
     </>
