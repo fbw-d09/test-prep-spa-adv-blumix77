@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import ThemeContext from './components/ThemeContext';
+import React, { useContext, useState } from 'react';
+import ThemeContext from './ThemeContext';
 import Header from './components/Header';
 import Card from './components/Card';
 import Footer from './components/Footer';
@@ -33,23 +33,24 @@ const country = {
                           ],
   };
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const [ theme, setTheme ] = useState('light');
 
-  const handleToggleTheme = () => {
-    toggleTheme();
-    document.body.classList.toggle('dark-mode');
+  const toggleTheme = () => {
+    setTheme(theme => theme === 'light' ? 'dark' : 'light');
   }
- 
+
+  const value = { theme, toggleTheme }
+
   return (
     <>
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={`App ${theme}`}>
+      <div className="App">
           <Header/>
-          <button onClick={handleToggleTheme}>ToggleTheme</button>
+          <button onClick={toggleTheme}>ToggleTheme</button>
           <Card country={country}/>
           <Footer/>
       </div>
-      </ThemeContext.Provider>
+    </ThemeContext.Provider>
     </>
   )
 }
